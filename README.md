@@ -28,11 +28,11 @@ To view this website on your local machine, follow these simple steps:
 
 1.  **Clone the repository:**
     ```
-    git clone [https://github.com/yourusername/das-brick-industry.git](https://github.com/yourusername/das-brick-industry.git)
+    git clone https://github.com/saurabd007/DAS-BRICK-INDUSTRY-WEBPAGE.git
     ```
 2.  **Navigate to the project directory:**
     ```
-    cd das-brick-industry
+    cd DAS-BRICK-INDUSTRY-WEBPAGE
     ```
 3.  **Open the `index.html` file:** Simply open the `index.html` file in your preferred web browser.
 
