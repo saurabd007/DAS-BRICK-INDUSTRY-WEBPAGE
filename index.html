@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DAS BRICK Industry — Red Bricks Manufacturer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <meta name="description" content="DAS BRICK Industry — Quality red bricks manufactured in Barpeta, Assam. Durable, eco-friendly, and cost-effective bricks for construction." />
+  <style>
+    :root{
+      --brick:#A8321F; /* primary */
+      --brick-dark:#7f2417;
+      --sienna:#C85A45;
+      --sand:#F3E6D9;
+      --muted:#6b6b6b;
+      --accent:#F2A27B;
+      --glass: rgba(255,255,255,0.06);
+      --radius:14px;
+      --max-width:1100px;
+      font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      color: #222;
+      background: linear-gradient(180deg, #fff 0%, #fffaf8 100%);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;line-height:1.5;background-image:linear-gradient(180deg, rgba(168,50,31,0.03) 0%, rgba(200,90,70,0.03) 100%);} 
+    a{color:inherit;text-decoration:none}
+
+    /* NAV */
+    .nav{position:fixed;left:0;right:0;top:0;backdrop-filter: blur(6px);background:rgba(255,255,255,0.65);border-bottom:1px solid rgba(0,0,0,0.04);z-index:1200}
+    .nav .wrap{max-width:var(--max-width);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
+    .logo{display:flex;align-items:center;gap:12px}
+    .mark{width:48px;height:48px;border-radius:8px;background:linear-gradient(135deg,var(--brick),var(--sienna));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-family:'Playfair Display', serif;font-size:18px;box-shadow:0 6px 18px rgba(168,50,31,0.18)}
+    .brand{font-weight:700}
+    .brand .name{font-family:'Playfair Display', serif;color:var(--brick-dark);font-size:18px}
+    .brand .tag{font-size:12px;color:var(--muted)}
+
+    .menu{display:flex;gap:20px;align-items:center}
+    .menu a{font-weight:600;font-size:14px;padding:8px 10px;border-radius:8px}
+    .menu a:hover{background:var(--glass)}
+    .cta{background:var(--brick);color:#eeeeee;padding:10px 14px;border-radius:10px;font-weight:700}
+
+    .hamb{display:none;border:0;background:transparent;padding:8px}
+
+    /* HERO */
+    header.hero{padding-top:92px;padding-bottom:60px}
+    .hero .wrap{display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center}
+    .eyebrow{display:inline-block;background:linear-gradient(90deg,var(--accent),var(--sienna));color:#fff;padding:6px 10px;border-radius:999px;font-weight:700;font-size:13px}
+    h1{font-family:'Playfair Display', serif;font-size:40px;margin:12px 0 8px;color:var(--brick-dark)}
+    p.lead{color:var(--muted);margin:0 0 18px}
+    .hero-cta{display:flex;gap:12px}
+    .card-stats{display:flex;gap:10px;margin-top:18px}
+    .stat{background:#fff;padding:12px 14px;border-radius:12px;box-shadow:0 6px 20px rgba(30,20,10,0.03);min-width:110px;text-align:center}
+    .stat b{display:block;font-size:18px;color:var(--brick-dark)}
+
+    .hero-visual{border-radius:14px;overflow:hidden;box-shadow:0 12px 40px rgba(168,50,31,0.12)}
+    .hero-visual img{width:100%;height:100%;display:block;object-fit:cover}
+
+    /* SECTIONS */
+    section{padding:54px 20px}
+    .container{max-width:var(--max-width);margin:0 auto}
+    .section-title{display:flex;align-items:baseline;gap:12px;margin-bottom:18px}
+    .section-title h2{margin:0;font-family:'Playfair Display', serif;color:var(--brick-dark)}
+    .section-title p{margin:0;color:var(--muted);font-size:14px}
+
+    /* ABOUT */
+    .about{display:grid;grid-template-columns:1fr 420px;gap:30px;align-items:center}
+    .about .cards{display:flex;flex-direction:column;gap:14px}
+    .about .info{background:linear-gradient(180deg, #fff, #fff);padding:20px;border-radius:12px;box-shadow:0 8px 30px rgba(10,10,10,0.03)}
+
+    /* PRODUCTS */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .product{background:#fff;border-radius:12px;padding:14px;box-shadow:0 8px 30px rgba(0,0,0,0.04);display:flex;flex-direction:column}
+    .product img{width:100%;height:160px;object-fit:cover;border-radius:10px}
+    .product h3{margin:12px 0 6px;font-size:16px}
+    .product p{margin:0;color:var(--muted);font-size:14px}
+
+    /* GALLERY */
+    .masonry{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+    .masonry img{width:100%;height:120px;object-fit:cover;border-radius:8px;cursor:pointer}
+
+    /* CONTACT */
+    .contact-grid{display:grid;grid-template-columns:1fr 420px;gap:28px}
+    .card{background:#fff;padding:18px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.04)}
+    .field{display:flex;flex-direction:column;margin-bottom:12px}
+    .field label{font-size:13px;margin-bottom:6px;color:var(--muted)}
+    .field input,.field textarea{padding:10px;border-radius:8px;border:1px solid #eee;font-size:14px}
+    .field textarea{min-height:120px;resize:vertical}
+
+    /* FOOTER */
+    footer{padding:28px 20px;background:linear-gradient(180deg, #fffaf8, #fff);border-top:1px solid rgba(0,0,0,0.03)}
+    .footer-inner{max-width:var(--max-width);margin:0 auto;display:flex;justify-content:space-between;gap:20px;align-items:center}
+
+    /* LIGHTBOX */
+    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.7);display:flex;align-items:center;justify-content:center;z-index:1400;opacity:0;pointer-events:none;transition:all .2s}
+    .lightbox.active{opacity:1;pointer-events:auto}
+    .lightbox img{max-width:90%;max-height:80%;border-radius:8px}
+
+    /* RESPONSIVE */
+    @media (max-width:1000px){
+      .hero .wrap,.about{grid-template-columns:1fr 320px}
+      .masonry{grid-template-columns:repeat(3,1fr)}
+      .grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:760px){
+      .wrap{padding:0 16px}
+      .nav .wrap{padding:10px 16px}
+      .hamb{display:inline-block}
+      .menu{position:fixed;right:12px;top:64px;background:rgba(255,255,255,0.98);padding:12px;border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,0.06);flex-direction:column;display:none}
+      .menu.open{display:flex}
+      .hero .wrap{grid-template-columns:1fr}
+      .about{grid-template-columns:1fr}
+      .contact-grid{grid-template-columns:1fr}
+      .masonry{grid-template-columns:repeat(2,1fr)}
+      .grid{grid-template-columns:1fr}
+      h1{font-size:28px}
+      .mark{width:44px;height:44px;font-size:16px}
+    }
+
+    /* small touches */
+    .fade-up{opacity:0;transform:translateY(12px);transition:all .7s cubic-bezier(.2,.9,.3,1)}
+    .in-view{opacity:1;transform:none}
+
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap">
+      <div class="logo">
+        <div class="mark">DAS</div>
+        <div class="brand">
+          <div class="name">DAS BRICK</div>
+          <div class="tag">Red Bricks Manufacturer</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px">
+        <button class="hamb" aria-label="menu" id="hamb">☰</button>
+        <div class="menu" id="menu">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#products">Products</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#contact">Contact</a>
+          <a class="cta" href="#contact">Get Quote</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header id="home" class="hero">
+    <div class="wrap container">
+      <div>
+        <span class="eyebrow">Established 1998</span>
+        <h1 class="fade-up">Quality Red Bricks — Built Strong, Built to Last</h1>
+        <p class="lead fade-up">DAS BRICK Industry manufactures high-strength red bricks with consistent sizing and low porosity. We serve builders, contractors, and retailers across Assam with timely deliveries and custom orders.</p>
+        <div class="hero-cta fade-up">
+          <a class="cta" href="#contact">Request a Quote</a>
+          <a href="#products" style="padding:10px 12px;border-radius:10px;background:transparent;border:1px solid rgba(0,0,0,0.06);font-weight:700">Our Products</a>
+        </div>
+
+        <div class="card-stats fade-up">
+          <div class="stat"><small>On-Demand Supply</small><b>Your Project, Our Priority</b></div>
+          <div class="stat"><small>Quality Grade</small><b>Class A</b></div>
+          <div class="stat"><small>Delivery</small><b>Local & Regional</b></div>
+        </div>
+      </div>
+
+      <div class="hero-visual fade-up" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1568539314706-f17c0e60d96d?q=80&w=798&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Brick kiln and stacked bricks">
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <div class="container about">
+        <div>
+          <div class="section-title">
+            <h2>About DAS BRICK</h2>
+            <p>Trusted red brick manufacturer from Barpeta, Assam</p>
+          </div>
+
+          <div class="info fade-up">
+            <p><strong>Building Stronger Foundations Since early 2000s</strong> Founded as a family-run kiln in Bhatkuchi, Barpeta, DAS BRICK Industry has been a cornerstone of quality construction in Assam for over two decades. Our mission is simple: to manufacture durable, high-strength red bricks that architects, builders, and homeowners can trust. We combine traditional craftsmanship with modern, controlled firing techniques to ensure every brick is uniform in size, color, and quality. When you choose our bricks, you're not just getting a product; you're getting a legacy of reliability and a foundation built to last.We utilize the advanced <strong>Hawa Bhatta technique</strong>, which uses <strong>electric fans </strong> to increase the burning efficiency of coal, resulting in a more uniform and stronger brick.</p>
+            <div style="margin-top:12px;display:flex;gap:12px;flex-wrap:wrap">
+              <div style="min-width:160px" class="card">
+                <h4 style="margin:0 0 6px">Our Values</h4>
+                <p style="margin:0;color:var(--muted)">Quality, Reliability, Affordability</p>
+              </div>
+              <div style="min-width:160px" class="card">
+                <h4 style="margin:0 0 6px">Sustainability</h4>
+                <p style="margin:0;color:var(--muted)">By optimizing our firing process with Hawa Bhatta technology, we significantly reduce coal consumption, making our brick manufacturing more environmentally friendly.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cards">
+          <div class="card fade-up">
+            <img src="images/image 2.jpeg" alt="field" style="width:100%;height:220px;object-fit:cover;border-radius:10px;margin-bottom:12px">
+            <h3 style="margin:0 0 6px">Our Yard & Kiln</h3>
+            <p style="margin:0;color:var(--muted)">Modern kilns with skilled operators ensure consistent firing and color.</p>
+          </div>
+
+          <div class="card fade-up">
+            <h3 style="margin:0 0 6px">Why Choose Us</h3>
+            <ul style="margin:0;padding-left:18px;color:var(--muted)">
+              <li>Our Hawa Bhatta firing process reduces coal usage, leading to a more sustainable product.</li>
+              <li>The advanced burning technique ensures our bricks are consistently strong and durable.</li>
+              <li>Timely local deliveries</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="container">
+        <div class="section-title">
+          <h2>Products</h2>
+          <p>Our most requested brick types and sizes</p>
+        </div>
+
+        <div class="grid fade-up">
+          <div class="product">
+            <img src="images/image6.jpeg" alt="standard red bricks">
+            <h3>Standard Red Brick</h3>
+            <p>190 × 90 × 90 mm — Good for general masonry. Compressive strength suited for most residential projects.</p>
+          </div>
+
+          <div class="product">
+            <img src="images/iamge4.jpeg" alt="hollow blocks">
+            <h3>Perforated Bricks</h3>
+            <p>Lightweight option for partition walls and non-load-bearing structures; better thermal insulation.</p>
+          </div>
+
+          <div class="product">
+            <img src="images/image5.jpeg">
+            <h3>Flooring Bricks</h3>
+            <p>High-strength bricks for flooring,Engineered to resist cracking and fading, ensuring a long-lasting and beautiful surface.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="container">
+        <div class="section-title">
+          <h2>Gallery</h2>
+          <p>Scenes from our production and yard</p>
+        </div>
+
+        <div class="masonry fade-up">
+          <img src="https://images.unsplash.com/photo-1639437038564-7e4764a1360d?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="brick stack" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1602577040858-00af5163af29?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="brick kiln" loading="lazy">
+          <img src="images/image12.jpeg" alt="clay" loading="lazy">
+          <img src="images/image11 .jpg" alt="workers stacking" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-title">
+          <h2>Contact & Enquiries</h2>
+          <p>Get in touch for pricing, delivery, or custom orders</p>
+        </div>
+
+        <div class="contact-grid fade-up">
+          <div class="card">
+            <h3>Contact Us</h3>
+            <p style="color:var(--muted)">Fill the form and we'll get back to you within 24–48 hours.</p>
+
+            <form id="contactForm" onsubmit="return false;">
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" required placeholder="Your full name">
+              </div>
+              <div class="field">
+                <label for="phone">Phone</label>
+                <input id="phone" required placeholder="Mobile number">
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="name@example.com">
+              </div>
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea id="message" placeholder="Tell us about your requirements"></textarea>
+              </div>
+              <div style="display:flex;gap:8px;align-items:center">
+                <button class="cta" id="sendBtn">Send Message</button>
+                <div id="formMsg" style="color:var(--muted);font-size:14px"></div>
+              </div>
+            </form>
+          </div>
+
+          <div>
+            <div class="card">
+              <h4>Reach Us</h4>
+              <p style="margin:6px 0;color:var(--muted)">DAS BRICK Industry<br>Village: Bhatkuchi, Barpeta, Assam<br>Phone: +91-98765-4320<br>Email: sdbrave8@gmail.com</p>
+
+              <div style="margin-top:12px;">
+                <h4 style="margin:0 0 8px">Opening Hours</h4>
+                <p style="margin:0;color:var(--muted)">Mon — Sun: 7:00 AM — 5:00 PM<br>24x7 Open</p>
+              </div>
+            </div>
+            <div style="margin:14px 0;">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3577.1654301421313!2d90.98344027492628!3d26.288736586627902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37599bc49272a105%3A0xba0989143eaacfa2!2zREFTIEJSSUNLIElORFVTVFJZICjgpqbgpr7gprgg4KaH4Kaf4Ka-IOCmieCmpuCnjeCmr-Cni-Cmlyzgpq3gpr7gpp_gpr4p!5e0!3m2!1sen!2sin!4v1754726920722!5m2!1sen!2sin" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+
+            <div style="margin-top:14px;" class="card">
+              <h4>Quick Facts</h4>
+              <ul style="margin:0;padding-left:18px;color:var(--muted)">
+                <li>Family-owned since 1998</li>
+                <li>Local deliveries across Barpeta district</li>
+                <li>Bulk discounts available</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+  <div class="footer-inner">
+    <div style="display:flex;align-items:center;gap:12px">
+      <div class="mark" style="width:44px;height:44px">DAS</div>
+      <div>
+        <div style="font-weight:700">DAS BRICK Industry</div>
+        <div style="font-size:13px;color:var(--muted)">
+          © <span id="year"></span> DAS BRICK — All rights reserved
+        </div>
+      </div>
+    </div>
+    <div style="color:var(--muted);font-size:14px">Made with ❤️ by sd007 for local builders</div>
+  </div>
+</footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-hidden="true"><img src="" alt="expanded image"></div>
+
+  <script>
+    // Small helper: smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const target = document.querySelector(a.getAttribute('href'));
+        if(target){
+          e.preventDefault();
+          target.scrollIntoView({behavior:'smooth',block:'start'});
+          // close mobile menu if open
+          document.getElementById('menu').classList.remove('open');
+        }
+      });
+    });
+
+    // Mobile menu
+    document.getElementById('hamb').addEventListener('click', ()=>{
+      document.getElementById('menu').classList.toggle('open');
+    });
+
+    // Simple form 'send' action (no backend)
+    document.getElementById('sendBtn').addEventListener('click', ()=>{
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const msgEl = document.getElementById('formMsg');
+
+      if(!name || !phone){ msgEl.textContent = 'Please provide your name and phone.'; return; }
+      msgEl.style.color = 'green';
+      msgEl.textContent = 'Thanks ' + name + '. Your request is ready to be sent (demo).';
+      // reset after a moment
+      setTimeout(()=>{ msgEl.textContent = ''; document.getElementById('contactForm').reset(); }, 3000);
+    });
+
+    // Simple lightbox for gallery images
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+    document.querySelectorAll('#gallery img').forEach(img=>{
+      img.addEventListener('click', ()=>{
+        lightboxImg.src = img.src;
+        lightbox.classList.add('active');
+        lightbox.setAttribute('aria-hidden','false');
+      })
+    });
+    lightbox.addEventListener('click', ()=>{
+      lightbox.classList.remove('active');
+      lightbox.setAttribute('aria-hidden','true');
+    });
+
+    // reveal on scroll
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in-view'); });
+    },{threshold:0.12});
+    document.querySelectorAll('.fade-up').forEach(el=>io.observe(el));
+
+    // small fix: inject current year into footer
+document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
