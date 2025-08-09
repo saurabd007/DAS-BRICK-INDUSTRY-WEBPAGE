@@ -22,6 +22,9 @@ This repository contains the source code for the official website of DAS BRICK I
 * **CSS3:** For all styling, layout, and visual presentation.
 * **JavaScript:** For minor interactive features, such as the mobile navigation menu and the image lightbox.
 
+### Here You Can check the webpage
+https://saurabd007.github.io/DAS-BRICK-INDUSTRY-WEBPAGE/     or     https://shorturl.at/vRlEK
+
 ### How to View Locally
 
 To view this website on your local machine, follow these simple steps:
